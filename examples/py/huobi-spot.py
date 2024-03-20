@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 
 import os
-from random import randint
 import sys
 
 root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -47,7 +46,7 @@ try:
     open_orders = exchange.fetch_open_orders(symbol, params={"side": "buy"})
     print(open_orders)
 
-    #Order cancelation
+    # Order cancelation
     cancelOrder = exchange.cancel_order(order['id'], symbol)
     print(cancelOrder)
 except Exception as e:
@@ -76,7 +75,7 @@ try:
     open_orders = exchange.fetch_open_orders(symbol, params={"side": "sell"})
     print(open_orders)
 
-    #Order cancelation
+    # Order cancelation
     cancelOrder = exchange.cancel_order(order['id'], symbol)
     print(cancelOrder)
 except Exception as e:

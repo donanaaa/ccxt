@@ -16,7 +16,7 @@ def common_handler(exchange, symbol):
     orderbook = data['orderbook']
     if balance and orderbook:
         total = balance['total']
-        tip = [ orderbook['asks'][0], orderbook['bids'][0] ]
+        tip = [orderbook['asks'][0], orderbook['bids'][0]]
         print(exchange.iso8601(exchange.milliseconds()), symbol, 'orderbook:', tip, 'balance:', total)
 
 

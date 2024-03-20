@@ -14,6 +14,7 @@ sys.path.append(root)
 
 from ccxt.test.base import test_shared_methods  # noqa E402
 
+
 def test_status(exchange, skipped_properties, method, entry, now):
     format = {
         'info': {},

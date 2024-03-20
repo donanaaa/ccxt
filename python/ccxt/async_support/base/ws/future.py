@@ -35,7 +35,7 @@ class Future(asyncio.Future):
                     if err:
                         exceptions.append(err)
                 # if any exceptions return with first exception
-                if len (exceptions) > 0:
+                if len(exceptions) > 0:
                     future.set_exception(exceptions[0])
                     return
                 # else return first result

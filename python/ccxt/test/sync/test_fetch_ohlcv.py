@@ -14,6 +14,7 @@ sys.path.append(root)
 
 from ccxt.test.base import test_ohlcv  # noqa E402
 
+
 def test_fetch_ohlcv(exchange, skipped_properties, symbol):
     method = 'fetchOHLCV'
     timeframe_keys = list(exchange.timeframes.keys())

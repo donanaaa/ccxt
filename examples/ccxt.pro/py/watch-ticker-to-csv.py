@@ -2,7 +2,6 @@
 
 from asyncio import gather, run
 import ccxt.pro
-from pprint import pprint
 
 
 async def watch_ticker_continuously(exchange, symbol):

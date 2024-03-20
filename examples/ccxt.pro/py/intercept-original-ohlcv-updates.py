@@ -2,7 +2,6 @@
 
 from asyncio import run
 import ccxt.pro
-from pprint import pprint
 
 
 class MyBinance(ccxt.pro.binance):

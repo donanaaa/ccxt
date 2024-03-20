@@ -2,9 +2,7 @@
 
 import asyncio
 import os
-from random import randint
 import sys
-from pprint import pprint
 import time
 
 root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
@@ -17,13 +15,13 @@ print('CCXT Version:', ccxt.__version__)
 ####################################################################################
 # Simple lending bot that will look for lending opportunities on bitfinex markets ##
 # and execute them using market orders.                                           ##
-#                                                                                 ##                 
+#                                                                                 ##
 # Disclaimer: this bot is for educational purposes only. Use at your own risk.    ##
 ####################################################################################
 
 # bot options
-wait_time = 5 # seconds to wait between each check
-paper_trading = True # set to false to actually execute trades
+wait_time = 5  # seconds to wait between each check
+paper_trading = True  # set to false to actually execute trades
 
 # exchange you want to use to look for lending opportunities
 exchange = ccxt.bitfinex2()
@@ -38,8 +36,9 @@ order_sizes = {
     "fUST": 100,
 }
 
+
 async def get_last_funding_infos():
-    tasks = [ exchange.public_get_funding_stats_symbol_hist({ 'symbol': currency, 'limit': 1 }) for currency in currencies ]
+    tasks = [exchange.public_get_funding_stats_symbol_hist({'symbol': currency, 'limit': 1}) for currency in currencies]
     results = await asyncio.gather(*tasks)
     fundingInfos = {}
     # parse results
@@ -57,6 +56,7 @@ async def get_last_funding_infos():
         }
     return fundingInfos
 
+
 async def bot():
     fundingInfos = await get_last_funding_infos()
     for currency in currencies:
@@ -67,9 +67,9 @@ async def bot():
 
         profit = (fundingInfo['averagePeriod'] * fundingInfo['rateDay'] * order_size) - order_size
 
-        if (profit > 0): # not taking into account slippage or order book depth
+        if (profit > 0):  # not taking into account slippage or order book depth
             print(ms, currency, "profit:", profit, "lend:", currency, "rate:", fundingInfo['rate'], "period (day):", fundingInfo['averagePeriod'])
-            
+
             if not paper_trading:
                 order = await exchange.private_post_auth_w_funding_offer_submit({
                     'type': 'LIMIT',
@@ -82,14 +82,16 @@ async def bot():
         else:
             print(str(ms), symbol, "no lending opportunity")
 
+
 async def check_requirements():
     print("Checking if exchange support the currency we want to lend")
     await exchange.load_markets()
-    
+
     for currency in currencies:
         if currency not in exchange.currencies_by_id:
             print(exchange.id, "does not support", currency)
             sys.exit()
+
 
 async def main():
     await check_requirements()
@@ -101,7 +103,5 @@ async def main():
             print("Exception: ", e)
         await asyncio.sleep(wait_time)
 
+
 asyncio.run(main())
-
-
-

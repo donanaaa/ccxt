@@ -29,5 +29,6 @@ async def test():
     coroutines = [fetch_balance_n_times(code, account, n) for account in accounts]
     await asyncio.gather(*coroutines)
 
+
 if __name__ == '__main__':
     asyncio.run(test())

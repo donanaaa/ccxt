@@ -8,6 +8,7 @@ from asyncio import run, sleep, gather
 from ccxt.base.errors import ExchangeClosedByUser  # noqa E402
 import ccxt.pro
 
+
 async def watch_ticker_loop(exchange):
     while True:
         ticker = await exchange.watch_ticker('BTC/USDT')

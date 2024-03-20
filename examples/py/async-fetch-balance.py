@@ -25,6 +25,7 @@ async def test():
     await exchange.close()  # don't forget to close it when you're done
     return True
 
+
 if __name__ == '__main__':
     print('CCXT version:', ccxt.__version__)
     print(asyncio.run(test()))

@@ -14,7 +14,6 @@ print('CCXT Version:', ccxt.__version__)
 
 exchange_ids = ['binance', 'okx', 'gate', 'huobi', 'bitget']
 symbols = ['BTC/USDT', 'ETH/USDT', 'LTC/USDT', 'XRP/USDT']
-from asyncio import gather, run
 
 
 async def fetch_price(exchange, symbol):
@@ -55,7 +54,6 @@ async def main():
     await gather(*coroutines)
     close_all = [exchange.close() for exchange in exchanges]
     await gather(*close_all)
-
 
 
 if __name__ == '__main__':

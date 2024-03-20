@@ -29,6 +29,7 @@ async def example_with_fetch_trades():
 
     await exch.close()
 
+
 async def example_with_watch_trades():
     exch = ccxt.binance({})
     timeframe = '1m'
@@ -57,11 +58,10 @@ async def example_with_watch_trades():
         # Note: first bar would carry incomplete values, please read comment in "buildOHLCVCFromWatchTrades" method definition for further explanation
         print('[WS] Constructed', len(collected_bars), 'bars from', symbol, 'trades: ', collected_bars)
 
-
     await exch.close()
 
-asyncio.run(example_with_fetch_trades())
 
+asyncio.run(example_with_fetch_trades())
 
 
 asyncio.run(example_with_watch_trades())

@@ -15,7 +15,7 @@ print('CCXT Version:', ccxt.__version__)
 
 # -----------------------------------------------------------------------------
 
-exchange = ccxt.bybit ({
+exchange = ccxt.bybit({
     'apiKey': 'YOUR_API_KEY',
     'secret': 'YOUR_API_SECRET',
     'defaultType': 'option',

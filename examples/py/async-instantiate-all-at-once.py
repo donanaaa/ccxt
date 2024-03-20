@@ -22,4 +22,5 @@ async def main():
     for id in exchanges:
         await exchanges[id].close()
 
+
 asyncio.run(main())

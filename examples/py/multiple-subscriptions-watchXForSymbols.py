@@ -2,9 +2,7 @@
 
 import asyncio
 import os
-from random import randint
 import sys
-from pprint import pprint
 
 root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 sys.path.append(root + '/python')
@@ -29,12 +27,10 @@ async def watch_multiple_orderbooks(symbols):
         print(f'orderbook bid: {orderbooks["symbol"]}{orderbooks["bids"][0]}')
 
 
-
 async def watch_multiple_ohlcv(symbols):
     while True:
         ohlcv = await exchange.watch_ohlcv_for_symbols(symbols)
         print(f'ohlcv: {ohlcv}')
-
 
 
 async def example_1():
@@ -46,6 +42,7 @@ async def example_1():
     )
 
 # -------------------------------------------------------------------------------------------
+
 
 async def main():
     try:

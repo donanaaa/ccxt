@@ -38,7 +38,7 @@ async def main():
     exchange = ccxt.binance()
     timeframe = '1m'
     limit = 1
-    symbols = [ 'BTC/USDT', 'ETH/USDT' ]
+    symbols = ['BTC/USDT', 'ETH/USDT']
     loops = [fetch_ohlcv(exchange, symbol, timeframe, limit) for symbol in symbols]
     await gather(*loops)
     await exchange.close()

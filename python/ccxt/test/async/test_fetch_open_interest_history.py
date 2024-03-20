@@ -14,6 +14,7 @@ sys.path.append(root)
 
 from ccxt.test.base import test_open_interest  # noqa E402
 
+
 async def test_fetch_open_interest_history(exchange, skipped_properties, symbol):
     method = 'fetchOpenInterestHistory'
     open_interest_history = await exchange.fetch_open_interest_history(symbol)

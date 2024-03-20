@@ -3534,6 +3534,7 @@ class Exchange(object):
         self.last_request_headers = request['headers']
         self.last_request_body = request['body']
         self.last_request_url = request['url']
+        print(params)
         return self.fetch(request['url'], request['method'], request['headers'], request['body'])
 
     def request(self, path, api: Any = 'public', method='GET', params={}, headers: Any = None, body: Any = None, config={}):

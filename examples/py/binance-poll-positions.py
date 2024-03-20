@@ -22,9 +22,8 @@ markets = exchange.load_markets()
 
 while True:
     try:
-        positions = exchange.fetch_positions ()
+        positions = exchange.fetch_positions()
         print(exchange.iso8601(exchange.milliseconds()), len(positions), 'positions')
-        print([ [position['symbol'], position['contracts']] for position in positions ])
+        print([[position['symbol'], position['contracts']] for position in positions])
     except Exception as e:
         print(type(e).__name__, str(e))
-

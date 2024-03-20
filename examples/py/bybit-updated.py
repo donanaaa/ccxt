@@ -2,9 +2,7 @@
 
 import asyncio
 import os
-from random import randint
 import sys
-from pprint import pprint
 
 root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 sys.path.append(root + '/python')
@@ -22,7 +20,7 @@ exchange = ccxt.bybit({
 
 # Example 1: Spot : fetch balance, create order, cancel it and check canceled orders
 async def example_1():
-    exchange.options['defaultType'] = 'spot'; # very important set spot as default type
+    exchange.options['defaultType'] = 'spot'  # very important set spot as default type
     markets = await exchange.load_markets(True)
 
     # fetch spot balance
@@ -49,11 +47,12 @@ async def example_1():
     print(orders)
     await exchange.close()
 
+
 # -------------------------------------------------------------------------------------------
 
 # Example 2 :: Swap : fetch balance, open a position and close it
 async def example_2():
-    exchange.options['defaultType'] = 'swap'; # very important set swap as default type
+    exchange.options['defaultType'] = 'swap'  # very important set swap as default type
     markets = await exchange.load_markets(True)
 
     # fetch swap balance
@@ -70,7 +69,7 @@ async def example_2():
     print('Create order id:', create_order['id'])
 
     # check opened position
-    symbols = [ symbol ]
+    symbols = [symbol]
     positions = await exchange.fetch_positions(symbols)
     print(positions)
 
@@ -82,11 +81,12 @@ async def example_2():
     close_position_order = await exchange.createOrder(symbol, type, side, amount, price, params)
     print(close_position_order)
 
+
 # -------------------------------------------------------------------------------------------
 
 # Example 3 :: USDC Swap : fetch balance, open a position and close it
 async def example_3():
-    exchange.options['defaultType'] = 'swap'; # very important set swap as default type
+    exchange.options['defaultType'] = 'swap'  # very important set swap as default type
     markets = await exchange.load_markets(True)
 
     # fetch USDC swap balance
@@ -108,12 +108,12 @@ async def example_3():
     type = 'limit'
     side = 'buy'
     amount = 0.1
-    price = 15000 # adjust this accordingly
+    price = 15000  # adjust this accordingly
     create_order = await exchange.create_order(symbol, type, side, amount, price)
     print('Create order id:', create_order['id'])
 
     # check if the order was filled and the position opened
-    symbols = [ symbol ]
+    symbols = [symbol]
     positions = await exchange.fetch_positions(symbols)
     print(positions)
 
@@ -125,11 +125,12 @@ async def example_3():
     close_position_order = await exchange.createOrder(symbol, type, side, amount, price, params)
     print(close_position_order)
 
+
 # -------------------------------------------------------------------------------------------
 
 # Example 4 :: Future : fetch balance, create stop-order and check open stop-orders
 async def example_4():
-    exchange.options['defaultType'] = 'future'; # very important set future as default type
+    exchange.options['defaultType'] = 'future'  # very important set future as default type
     markets = await exchange.load_markets(True)
 
     # fetch future balance
@@ -143,8 +144,8 @@ async def example_4():
     side = 'buy'
     type = 'limit'
     stop_order_params = {
-        'position_idx': 0, # 0 One-Way Mode, 1 Buy-side, 2 Sell-side, default = 0
-        'stopPrice': 1000, # mandatory for stop orders
+        'position_idx': 0,  # 0 One-Way Mode, 1 Buy-side, 2 Sell-side, default = 0
+        'stopPrice': 1000,  # mandatory for stop orders
         'basePrice': 1100  # mandatory for stop orders
     }
     stop_order = await exchange.create_order(symbol, type, side, amount, price, stop_order_params)
@@ -163,6 +164,7 @@ async def example_4():
 
 # -------------------------------------------------------------------------------------------
 
+
 async def main():
     try:
         await example_1()
@@ -172,10 +174,6 @@ async def main():
     except Exception as e:
         print(e)
     await exchange.close()
-    
-    
 
 
 asyncio.run(main())
-
-

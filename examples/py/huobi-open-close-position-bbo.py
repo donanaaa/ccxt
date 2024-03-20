@@ -2,9 +2,7 @@
 
 import asyncio
 import os
-from random import randint
 import sys
-from pprint import pprint
 
 root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 sys.path.append(root + '/python')
@@ -19,6 +17,7 @@ exchange = ccxt.huobi({
     'secret': 'YOUR_SECRET_KEY',
 })
 
+
 # Example 1 :: Swap : fetch balance, open a position and close it using BBO price
 async def example_1():
     markets = await exchange.load_markets(True)
@@ -32,7 +31,7 @@ async def example_1():
     # type = 'opponent' means it will use BB0 (the best bid or offer on the Exchange) as the price, huobi does not support "market"
     # other types available are: opponent_fok, optimal_5, optimal_10, optimal_20, etc, etc
     # you can check all the types available in the docs: https://huobiapi.github.io/docs/usdt_swap/v1/en/#cross-place-an-order
-    type = 'opponent' 
+    type = 'opponent'
     side = 'buy'
     amount = 1
     price = None
@@ -40,7 +39,7 @@ async def example_1():
     print('Create order id:', create_order['id'])
 
     # check opened position
-    symbols = [ symbol ]
+    symbols = [symbol]
     positions = await exchange.fetch_positions(symbols)
     print(positions)
 
@@ -54,14 +53,13 @@ async def example_1():
 
 # -------------------------------------------------------------------------------------------
 
+
 async def main():
     try:
         await example_1()
     except Exception as e:
         print(e)
     await exchange.close()
-    
+
 
 asyncio.run(main())
-
-

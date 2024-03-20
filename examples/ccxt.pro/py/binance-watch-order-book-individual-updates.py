@@ -15,7 +15,8 @@ class MyBinance(ccxt.binance):
             'asks': asks,
             'bids': bids,
         })
-        return super(MyBinance, self).handle_order_book_message(client, message, orderbook);
+        return super(MyBinance, self).handle_order_book_message(client, message, orderbook)
+
 
 async def main():
     exchange = MyBinance()

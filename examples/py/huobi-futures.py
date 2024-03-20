@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 
 import os
-from random import randint
 import sys
 
 root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -26,7 +25,7 @@ markets = exchange.load_markets()
 # exchange.verbose = True  # uncomment for debugging purposes if necessary
 
 # creating and canceling a linear future (limit) order
-symbol = 'ETH/USDT:USDT-220121' # the last segment is the date of expiration (can be next week, next quarter, ...) adjust it accordingly
+symbol = 'ETH/USDT:USDT-220121'  # the last segment is the date of expiration (can be next week, next quarter, ...) adjust it accordingly
 order_type = 'limit'
 side = 'buy'
 offset = 'open'
@@ -57,12 +56,12 @@ except Exception as e:
 
 
 # creating and canceling a inverse future (limit) order
-symbol = 'ADA/USD:ADA-220121' # the last segment is the date of expiration (can be next week, next quarter, ...) adjust it accordingly
+symbol = 'ADA/USD:ADA-220121'  # the last segment is the date of expiration (can be next week, next quarter, ...) adjust it accordingly
 order_type = 'limit'
 side = 'buy'
 offset = 'open'
 leverage = 1
-amount = 1 # 1 contract = 10 ADA
+amount = 1  # 1 contract = 10 ADA
 price = 1
 
 params = {'offset': offset, 'lever_rate': leverage}

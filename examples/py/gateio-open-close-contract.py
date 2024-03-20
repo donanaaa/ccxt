@@ -1,9 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import os
-from random import randint
 import sys
-from pprint import pprint
 
 root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 sys.path.append(root + '/python')
@@ -21,7 +19,7 @@ exchange = ccxt.gateio({
     },
 })
 
-# exchange.set_sandbox_mode(True) 
+# exchange.set_sandbox_mode(True)
 
 markets = exchange.load_markets()
 
@@ -43,7 +41,7 @@ try:
     order = exchange.create_order(symbol, order_type, side, amount)
     # print(order)
 
-    # closing it by issuing an oposite contract 
+    # closing it by issuing an oposite contract
     # and therefore close our previous position
     side = 'sell'
     type = 'market'

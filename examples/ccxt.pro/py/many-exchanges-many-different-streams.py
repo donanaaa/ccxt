@@ -46,7 +46,7 @@ async def main():
         },
         'binance': {
             'watchOrderBook': ['BTC/USDT', 'ETH/BTC'],
-            'watchTrades': [ 'ETH/BTC' ],
+            'watchTrades': ['ETH/BTC'],
         },
     }
     loops = [exchange_loop(exchange_id, methods) for exchange_id, methods in exchanges.items()]

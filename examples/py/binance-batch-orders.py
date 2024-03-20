@@ -17,10 +17,10 @@ exchange = ccxt.binance({
 
 orders = [
     {
-        "symbol" : "BTCUSDT",
-        "side" : "BUY",
-        "positionSide" : "LONG",
-        "type" : "MARKET",
+        "symbol": "BTCUSDT",
+        "side": "BUY",
+        "positionSide": "LONG",
+        "type": "MARKET",
         "quantity": float(0.005)
     }
 ]

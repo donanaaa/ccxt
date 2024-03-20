@@ -14,6 +14,7 @@ sys.path.append(root)
 
 from ccxt.test.base import test_leverage_tier  # noqa E402
 
+
 def test_fetch_market_leverage_tiers(exchange, skipped_properties, symbol):
     method = 'fetchMarketLeverageTiers'
     tiers = exchange.fetch_market_leverage_tiers(symbol)

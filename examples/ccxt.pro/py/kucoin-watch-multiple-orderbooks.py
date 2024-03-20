@@ -16,6 +16,7 @@ async def symbol_loop(exchange, symbol):
             # raise e  # uncomment to break all loops in case of an error in any one of them
             break  # you can break just this one loop if it fails
 
+
 async def main():
     exchange = ccxt.pro.kucoin({
         "apiKey": "YOUR_API_KEY",

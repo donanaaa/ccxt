@@ -22,7 +22,7 @@ def sync_client(exchange_id):
         orderbook = exchange.fetch_order_book(market['symbol'])
     except Exception as e:
         print(type(e).__name__, str(e))
-    return { 'exchange': exchange.id, 'orderbook': orderbook }
+    return {'exchange': exchange.id, 'orderbook': orderbook}
 
 
 async def async_client(exchange_id):
@@ -35,7 +35,7 @@ async def async_client(exchange_id):
     except Exception as e:
         print(type(e).__name__, str(e))
     await exchange.close()
-    return { 'exchange': exchange.id, 'orderbook': orderbook }
+    return {'exchange': exchange.id, 'orderbook': orderbook}
 
 
 async def multi_orderbooks(exchanges):

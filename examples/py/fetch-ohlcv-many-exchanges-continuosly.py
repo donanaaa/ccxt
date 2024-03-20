@@ -12,6 +12,7 @@ sys.path.append(root + '/python')
 # ----------------------------------------------------------------------------
 undefined
 
+
 # AUTO-TRANSPILE #
 # fetch and handle constinuosly
 async def fetch_ohlcv_continuously(exchange, symbol):
@@ -46,7 +47,6 @@ async def example():
         exchange_name = exchanges[i]
         promises.append(start_exchange(exchange_name, symbols))
     await asyncio.gather(*promises)
-
 
 
 asyncio.run(example())

@@ -14,6 +14,7 @@ sys.path.append(root)
 
 from ccxt.test.base import test_account  # noqa E402
 
+
 def test_fetch_accounts(exchange, skipped_properties):
     method = 'fetchAccounts'
     accounts = exchange.fetch_accounts()

@@ -2,7 +2,6 @@
 
 import os
 import sys
-import time
 root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 sys.path.append(root + '/python')
 
@@ -35,7 +34,7 @@ try:
         exchange = getattr(ccxt, id)()
 
         if exchange.has['fetchTickers'] != True:
-            raise ccxt.NotSupported ('Exchange ' + exchange.id + ' does not have the endpoint to fetch all tickers from the API.')
+            raise ccxt.NotSupported('Exchange ' + exchange.id + ' does not have the endpoint to fetch all tickers from the API.')
 
         # load all markets from the exchange
         markets = exchange.load_markets()

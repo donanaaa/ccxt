@@ -12,11 +12,12 @@ import ccxt.async_support as ccxt  # noqa: E402
 
 print('CCXT Version:', ccxt.__version__)
 
+
 async def main():
     exchange = ccxt.phemex({
         "apiKey": "YOUR_API_KEY",
         "secret": "YOUR_SECRET",
-        'options': { 'defaultType': 'swap' }
+        'options': {'defaultType': 'swap'}
     })
     markets = await exchange.load_markets()
     # exchange.verbose = True  # uncomment for debugging purposes if necessary

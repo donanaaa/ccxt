@@ -6,7 +6,6 @@ import sys
 root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 sys.path.append(root + '/python')
 
-import pandas_ta as ta
 import pandas as pd
 import ccxt
 
@@ -31,8 +30,6 @@ while True:
             df['time'] = pd.to_datetime(df['time'], unit='ms')
             df = pd.concat([df, df.ta.rsi(length=rsi_length)], axis=1)
             print(df[-20:])
-            print(exchange.iso8601 (exchange.milliseconds()))
+            print(exchange.iso8601(exchange.milliseconds()))
     except Exception as e:
         print(type(e).__name__, str(e))
-
-

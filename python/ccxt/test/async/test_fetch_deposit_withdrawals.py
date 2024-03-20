@@ -15,6 +15,7 @@ sys.path.append(root)
 from ccxt.test.base import test_shared_methods  # noqa E402
 from ccxt.test.base import test_deposit_withdrawal  # noqa E402
 
+
 async def test_fetch_deposits_withdrawals(exchange, skipped_properties, code):
     method = 'fetchTransactions'
     transactions = await exchange.fetch_transactions(code)

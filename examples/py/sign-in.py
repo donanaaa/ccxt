@@ -19,7 +19,7 @@ exchange = ccxt.bitmart({
 while True:
     try:
         print('---------------------------------------------------------------')
-        datetime = exchange.iso8601 (exchange.milliseconds ())
+        datetime = exchange.iso8601(exchange.milliseconds())
         print(datetime)
         balance = exchange.fetch_balance()  # this will trigger a sign_in when needed
         pprint(balance)

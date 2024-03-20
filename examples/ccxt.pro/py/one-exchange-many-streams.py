@@ -3,6 +3,7 @@
 from asyncio import run
 import ccxt.pro
 
+
 async def loop(exchange, symbol):
     await exchange.throttle(10)
     while True:
@@ -14,6 +15,7 @@ async def loop(exchange, symbol):
             print(str(e))
             # raise e  # uncomment to break all loops in case of an error in any one of them
             # break  # you can also break just this one loop if it fails
+
 
 async def main():
     exchange = ccxt.pro.ftx()

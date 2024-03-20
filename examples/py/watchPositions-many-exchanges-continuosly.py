@@ -12,6 +12,7 @@ sys.path.append(root + '/python')
 # ----------------------------------------------------------------------------
 undefined
 
+
 # AUTO-TRANSPILE #
 # watch and handle constinuosly
 async def watch_positions_continuously(exchange):
@@ -57,7 +58,6 @@ async def example():
         config = exchanges[exchange_name]
         promises.append(start_exchange(exchange_name, config))
     await asyncio.gather(*promises)
-
 
 
 asyncio.run(example())

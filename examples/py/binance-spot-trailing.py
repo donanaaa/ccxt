@@ -2,9 +2,7 @@
 
 import asyncio
 import os
-from random import randint
 import sys
-from pprint import pprint
 
 root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 sys.path.append(root + '/python')
@@ -24,6 +22,7 @@ exchange = ccxt.binance({
     'secret': os.environ['BINANCE_SECRET'],
 })
 
+
 # You can read more about spot trailing orders here:
 # https://github.com/binance/binance-spot-api-docs/blob/master/faqs/trailing-stop-faq.md
 
@@ -38,7 +37,7 @@ async def example_1():
     amount = 0.4
     price = 25
     params = {
-        'trailingDelta':  500, # 5% in BIPS
+        'trailingDelta':  500,  # 5% in BIPS
     }
     exchange.verbose = True
     create_order = await exchange.create_order(symbol, type, side, amount, price, params)
@@ -49,6 +48,7 @@ async def example_1():
     print(canceled_order)
 
     await exchange.close()
+
 
 # -------------------------------------------------------------------------------------------
 
@@ -63,7 +63,7 @@ async def example_2():
     amount = 0.2
     price = 70
     params = {
-        'trailingDelta':  250 # 2.5% in BIPS
+        'trailingDelta':  250  # 2.5% in BIPS
     }
     exchange.verbose = True
     create_order = await exchange.create_order(symbol, type, side, amount, price, params)
@@ -77,6 +77,7 @@ async def example_2():
 
 # -------------------------------------------------------------------------------------------
 
+
 async def main():
     try:
         # await example_1()
@@ -84,8 +85,6 @@ async def main():
     except Exception as e:
         print(e)
     await exchange.close()
-    
-    
 
 
 asyncio.run(main())

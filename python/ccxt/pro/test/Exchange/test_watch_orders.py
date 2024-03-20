@@ -15,6 +15,7 @@ sys.path.append(root)
 from ccxt.test.base import test_order  # noqa E402
 from ccxt.test.base import test_shared_methods  # noqa E402
 
+
 async def test_watch_orders(exchange, skipped_properties, symbol):
     method = 'watchOrders'
     now = exchange.milliseconds()

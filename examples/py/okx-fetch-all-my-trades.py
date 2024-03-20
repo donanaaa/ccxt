@@ -19,7 +19,7 @@ exchange = ccxt.okx({
 })
 
 
-markets = exchange.load_markets ()
+markets = exchange.load_markets()
 
 exchange.verbose = True  # uncomment for debugging
 

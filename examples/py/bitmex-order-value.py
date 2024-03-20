@@ -16,10 +16,10 @@ symbol = 'XBTU20'
 market = exchange.market(symbol)
 
 units = {
-    'XBT':  { 'decimals': 4, 'multiplier': 1, 'name': 'bitcoin' },
-    'mXBT': { 'decimals': 3, 'multiplier': 1000, 'name': 'milli-bitcoin'  },
-    'μXBT': { 'decimals': 1, 'multiplier': 1000000, 'name': 'micro-bitcoin' },
-    'XBt':  { 'decimals': 0, 'multiplier': 100000000, 'name': 'satoshi' },
+    'XBT':  {'decimals': 4, 'multiplier': 1, 'name': 'bitcoin'},
+    'mXBT': {'decimals': 3, 'multiplier': 1000, 'name': 'milli-bitcoin'},
+    'μXBT': {'decimals': 1, 'multiplier': 1000000, 'name': 'micro-bitcoin'},
+    'XBt':  {'decimals': 0, 'multiplier': 100000000, 'name': 'satoshi'},
 }
 
 # the following calculation depends on contract specifications

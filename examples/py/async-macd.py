@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 
 from asyncio import gather, run
-import pandas_ta as ta
 import pandas as pd
 import os
 import sys

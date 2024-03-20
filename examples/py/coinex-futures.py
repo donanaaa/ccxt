@@ -2,9 +2,7 @@
 
 import asyncio
 import os
-from random import randint
 import sys
-from pprint import pprint
 
 root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 sys.path.append(root + '/python')
@@ -19,16 +17,17 @@ exchange = ccxt.coinex({
     'secret': 'YOUR_SECRET_KEY',
 })
 
+
 # Example 1 :: Swap : fetch balance, create a limit swap order with leverage
 async def example_1():
     exchange.options['defaultType'] = 'swap'
-    exchange.options['defaultMarginMode'] = 'cross' # or isolated
+    exchange.options['defaultMarginMode'] = 'cross'  # or isolated
     markets = await exchange.load_markets()
 
     # fetch swap balance
     balance = await exchange.fetch_balance()
     print(balance)
-    
+
     # set the desired leverage (has to be made before placing the order and for a specific symbol)
     leverage = 8
     symbol = 'ADA/USDT:USDT'
@@ -43,14 +42,14 @@ async def example_1():
     create_order = await exchange.create_order(symbol, type, side, amount, price)
     print('Create order id:', create_order['id'])
 
+
 # ------------------------------------------------------------------------------------------
 
 # Example 2 :: Swap :: open a position and close it
 async def example_2():
-    exchange.options['defaultType'] = 'swap'; # very important set swap as default type
-    exchange.options['defaultMarginMode'] = 'cross' # or isolated
+    exchange.options['defaultType'] = 'swap'  # very important set swap as default type
+    exchange.options['defaultMarginMode'] = 'cross'  # or isolated
     markets = await exchange.load_markets()
-
 
     # set the desired leverage (has to be made before placing the order and for a specific symbol)
     leverage = 3
@@ -80,10 +79,10 @@ async def example_2():
 
 # ------------------------------------------------------------------------------------------
 
+
 async def main():
     await example_1()
     await example_2()
 
+
 asyncio.run(main())
-
-

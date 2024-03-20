@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 
 import os
-from random import randint
 import sys
 
 root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -32,10 +31,10 @@ try:
         market = markets[key]
         if market['future']:
             futures.append(market)
-    
+
     if len(futures) > 0:
         market = futures[0]
-        symbol = market['symbol'] # example: BTC/USDT:USDT-220318
+        symbol = market['symbol']  # example: BTC/USDT:USDT-220318
         type = 'market'
         side = 'buy'
         amount = 1

@@ -22,11 +22,11 @@ side = 'buy'
 amount = 100
 price = 15000
 
-### Creating multiple orders and cancel them
-### https://github.com/ccxt/ccxt/issues/10112
+# Creating multiple orders and cancel them
+# https://github.com/ccxt/ccxt/issues/10112
 
-## Example 1
-## Canceling orders using ClientOrderId
+# Example 1
+# Canceling orders using ClientOrderId
 
 # create first order
 order1 = exchange.create_order(symbol, type, side, amount, price, {'clientOrderId': 'order0001'})
@@ -43,11 +43,11 @@ print(order3['id'])
 cancelResponse = exchange.cancel_order(None, None, {'clientOrderId': 'order0001'})
 print(cancelResponse)
 # cancel second and third order at the same time
-cancelboth = exchange.cancel_orders(None, None, {'clientOrderId': ['order0002','order0003']})
+cancelboth = exchange.cancel_orders(None, None, {'clientOrderId': ['order0002', 'order0003']})
 print(cancelboth)
 
-## Example 2
-## Canceling orders using OrderId
+# Example 2
+# Canceling orders using OrderId
 
 # create first order
 newOrder1 = exchange.create_order(symbol, type, side, amount, price)

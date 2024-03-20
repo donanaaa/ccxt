@@ -48,6 +48,7 @@ async def fetch_ohlcvs_continuously(exchange, timeframe, symbol, fetching_time):
         now = exchange.milliseconds()
     return {symbol: all_ohlcvs}
 
+
 async def fetch_all_ohlcvs_continuously(exchange_id, timeframe, symbols, fetching_time):
     exchange_class = getattr(ccxt, exchange_id)
     exchange = exchange_class()
@@ -55,6 +56,7 @@ async def fetch_all_ohlcvs_continuously(exchange_id, timeframe, symbols, fetchin
     results = await asyncio.gather(*input_coroutines, return_exceptions=True)
     await exchange.close()
     return exchange.extend(*results)
+
 
 print('CCXT version:', ccxt.__version__)
 

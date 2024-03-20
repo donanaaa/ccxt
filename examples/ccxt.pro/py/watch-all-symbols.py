@@ -31,5 +31,4 @@ async def main():
     await exchange.close()
 
 
-
 asyncio.run(main())

@@ -3,6 +3,7 @@ from asyncio import run
 
 print('CCXT Version:', ccxt.__version__)
 
+
 async def main():
     exchange = ccxt.pro.binance({
         'options': {

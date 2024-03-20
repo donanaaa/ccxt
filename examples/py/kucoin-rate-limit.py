@@ -26,7 +26,7 @@ while True:
         datetime = exchange.iso8601(now)
         print(datetime, i, 'fetched', len(ohlcvs), symbol, timeframe, 'candles',
             'from', exchange.iso8601(ohlcvs[0][0]),
-            'to', exchange.iso8601(ohlcvs[len(ohlcvs)-1][0]))
+            'to', exchange.iso8601(ohlcvs[len(ohlcvs) - 1][0]))
     except ccxt.RateLimitExceeded as e:
         now = exchange.milliseconds()
         datetime = exchange.iso8601(now)

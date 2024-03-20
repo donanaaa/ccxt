@@ -14,6 +14,7 @@ sys.path.append(root)
 
 from ccxt.test.base import test_ledger_entry  # noqa E402
 
+
 def test_fetch_ledger_entry(exchange, skipped_properties, code):
     method = 'fetchLedgerEntry'
     items = exchange.fetch_ledger(code)

@@ -3,6 +3,7 @@
 import ccxt.pro
 from asyncio import run
 
+
 async def main():
     exchange = ccxt.pro.coinbasepro()
     method = 'watchTrades'

@@ -19,6 +19,7 @@ from ccxt.base.errors import OperationFailed  # noqa E402
 from ccxt.base.errors import OnMaintenance  # noqa E402
 from ccxt.base.errors import ArgumentsRequired  # noqa E402
 
+
 def log_template(exchange, method, entry):
     return ' <<< ' + exchange.id + ' ' + method + ' ::: ' + exchange.json(entry) + ' >>> '
 

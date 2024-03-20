@@ -12,6 +12,7 @@ sys.path.append(root + '/python')
 # ----------------------------------------------------------------------------
 undefined
 
+
 # AUTO-TRANSPILE #
 async def example():
     exchange = ccxt.bingx({

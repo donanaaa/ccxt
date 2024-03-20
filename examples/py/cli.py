@@ -121,7 +121,7 @@ async def main():
         sys.exit()
 
     # check here if we have a arg like this: binance.fetchOrders()
-    call_reg = "\s*(\w+)\s*\.\s*(\w+)\s*\(([^()]*)\)"
+    call_reg = r"\s*(\w+)\s*\.\s*(\w+)\s*\(([^()]*)\)"
     match = re.match(call_reg, argv.exchange_id)
     if match is not None:
         groups = match.groups()
@@ -217,7 +217,7 @@ async def main():
         # if it is a method, call it
         if callable(method):
             if argv.method.startswith('watch'):
-                is_ws_method = True # handle ws methods
+                is_ws_method = True  # handle ws methods
             print(f"{argv.exchange_id}.{argv.method}({','.join(map(str, args))})")
             while True:
                 result = method(*args)

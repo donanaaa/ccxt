@@ -34,4 +34,3 @@ while True:
         previous_timestamp = current_timestamp
     except Exception as e:
         print(type(e).__name__, str(e))
-

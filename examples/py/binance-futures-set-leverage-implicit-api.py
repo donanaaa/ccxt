@@ -21,7 +21,7 @@ exchange.load_markets()
 
 symbol = 'ADA/USDT'
 market = exchange.market(symbol)
-leverage =  10
+leverage = 10
 
 response = exchange.fapiPrivate_post_leverage({
     'symbol': market['id'],

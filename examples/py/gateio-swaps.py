@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 
 import os
-from random import randint
 import sys
 
 root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -54,7 +53,7 @@ side = 'buy'
 amount = 1
 price = 55
 stop_price = 140
-params = {'stopPrice': stop_price }
+params = {'stopPrice': stop_price}
 
 try:
     # set leverage
@@ -70,7 +69,7 @@ try:
     print(open_orders)
 
     # canceling an order
-    cancelParams = {'isStop': True }
+    cancelParams = {'isStop': True}
     cancelOrder = exchange.cancel_order(order['id'], symbol, cancelParams)
     print(cancelOrder)
 

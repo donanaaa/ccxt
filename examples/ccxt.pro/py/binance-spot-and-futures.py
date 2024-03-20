@@ -53,7 +53,7 @@ async def main():
     configs = {
         'Exchange A (Binance spot)': {
             'id': 'binance',
-            'symbols': ['BTC/USDT', 'ETH/BTC','ETH/USDT'],
+            'symbols': ['BTC/USDT', 'ETH/BTC', 'ETH/USDT'],
             'options': {
                 'defaultType': 'spot',
             },

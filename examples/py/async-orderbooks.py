@@ -1,9 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import asyncio
-import ccxt
 import ccxt.async_support as ccxta  # noqa: E402
-import time
 import os
 import sys
 

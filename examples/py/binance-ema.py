@@ -2,7 +2,6 @@
 
 import os
 import sys
-import pandas_ta as ta
 import pandas as pd
 
 root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))

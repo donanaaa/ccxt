@@ -3,7 +3,6 @@
 import asyncio
 import os
 import sys
-from pprint import pprint
 
 root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 sys.path.append(root + '/python')
@@ -11,8 +10,9 @@ sys.path.append(root + '/python')
 import ccxt.async_support as ccxt  # noqa: E402
 
 
-exchange_ids = [ 'binance', 'kucoin', 'huobipro' ]
+exchange_ids = ['binance', 'kucoin', 'huobipro']
 symbol = 'ETH/BTC'
+
 
 async def loop(exchange_id, symbol):
 
@@ -26,7 +26,7 @@ async def loop(exchange_id, symbol):
     except Exception as e:
         print(type(e).__name__, str(e))
     await exchange.close()
-    return exchange.extend (orderbook, {
+    return exchange.extend(orderbook, {
         'exchange_id': exchange_id,
         'symbol': symbol,
     })

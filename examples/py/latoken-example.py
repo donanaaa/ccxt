@@ -20,7 +20,7 @@ def table(values):
 
 symbol = 'BTC/USDT'
 
-exchange = ccxt.latoken ({
+exchange = ccxt.latoken({
     # 'verbose': True,  # uncomment for debugging purposes
     # uncomment and change for your keys to enable private calls
     # 'apiKey': 'YOUR_API_KEY',
@@ -105,10 +105,10 @@ if exchange.check_required_credentials(False):
 
     print('-------------------------------------------------------------------')
 
-    canceled_orders = exchange.fetch_canceled_orders (symbol)
+    canceled_orders = exchange.fetch_canceled_orders(symbol)
     print(table([exchange.omit(x, ['info', 'timestamp']) for x in canceled_orders]))
 
     print('-------------------------------------------------------------------')
 
-    my_trades = exchange.fetch_my_trades (symbol)
+    my_trades = exchange.fetch_my_trades(symbol)
     print(table([exchange.omit(x, ['info', 'timestamp']) for x in my_trades]))

@@ -18,13 +18,13 @@ exchange = ccxt.binance({
 })
 
 
-exchange.load_markets ()
+exchange.load_markets()
 
 # exchange.verbose = True  # uncomment for debugging
 
 symbol = 'ETH/BTC'
 from_id = '0'
-params = { 'fromId': from_id }
+params = {'fromId': from_id}
 previous_from_id = from_id
 
 all_trades = []
@@ -52,4 +52,4 @@ while True:
 print('Fetched', len(all_trades), 'trades')
 for i in range(0, len(all_trades)):
     trade = all_trades[i]
-    print (i, trade['id'], trade['datetime'], trade['amount'])
+    print(i, trade['id'], trade['datetime'], trade['amount'])

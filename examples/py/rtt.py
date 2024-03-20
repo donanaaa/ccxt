@@ -63,7 +63,6 @@ def main():
         pprint(order)
         pprint(results)
 
-
     rtt = int(sum(results) / len(results))
     print('Successfully tested 10 orders, the average round-trip time per order is', rtt, 'milliseconds')
 

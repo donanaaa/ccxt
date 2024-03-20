@@ -72,7 +72,7 @@ async def main():
         },
         'binance': {
             'watchOrderBook': ['BTC/USDT', 'ETH/BTC'],
-            'watchTrades': [ 'ETH/BTC' ],
+            'watchTrades': ['ETH/BTC'],
             'watchBalance': [],
         },
     }

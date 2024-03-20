@@ -14,6 +14,7 @@ sys.path.append(root)
 
 from ccxt.test.base import test_borrow_interest  # noqa E402
 
+
 async def test_fetch_borrow_interest(exchange, skipped_properties, code, symbol):
     method = 'fetchBorrowInterest'
     borrow_interest = await exchange.fetch_borrow_interest(code, symbol)

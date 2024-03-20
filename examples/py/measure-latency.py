@@ -18,6 +18,7 @@ def print_usage():
     print('Usage: python ', sys.argv[0], 'id', 'num_orders', 'symbol', 'side', 'amount', 'price')
     print_supported_exchanges()
 
+
 def main():
     try:
         id = sys.argv[1]  # get exchange id from command line arguments
@@ -60,6 +61,6 @@ def main():
         print(type(e).__name__, str(e))
         print_usage()
 
+
 print('CCXT Version:', ccxt.__version__)
 main()
-

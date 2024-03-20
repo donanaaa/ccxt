@@ -23,6 +23,7 @@ async def example_proxy_url():
 
     await my_ex.close()
 
+
 async def example_http_proxy():
     my_ex = ccxt.kucoin()
     my_ex.http_proxy = 'http://5.75.153.75:8002'  # "httpProxy" or "httpsProxy" (depending on your proxy protocol)
@@ -30,12 +31,14 @@ async def example_http_proxy():
 
     await my_ex.close()
 
+
 async def example_socks_proxy():
     my_ex = ccxt.kucoin()
     my_ex.socks_proxy = 'socks5://127.0.0.1:1080'  # from protocols: socks, socks5, socks5h
     print(await my_ex.fetch('https://api.ipify.org/'))
 
     await my_ex.close()
+
 
 async def example_web_sockets():
     my_ex = ccxt.kucoin()
@@ -46,7 +49,7 @@ async def example_web_sockets():
         ticker = await my_ex.watch_ticker('BTC/USDT')
         print(ticker)
 
-
     await my_ex.close()
+
 
 asyncio.run(example_proxy_url())

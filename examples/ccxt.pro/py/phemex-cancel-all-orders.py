@@ -4,6 +4,7 @@ from pprint import pprint
 
 print('CCXT Version:', ccxt.__version__)
 
+
 async def main():
     exchange = ccxt.pro.phemex({
         'apiKey': 'YOUR_API_KEY',

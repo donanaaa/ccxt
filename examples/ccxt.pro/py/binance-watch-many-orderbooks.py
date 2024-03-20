@@ -3,6 +3,7 @@ import asyncio
 
 orderbooks = {}
 
+
 def when_orderbook_changed(exchange_spot, symbol, orderbook):
     # this is a common handler function
     # it is called when any of the orderbook is updated

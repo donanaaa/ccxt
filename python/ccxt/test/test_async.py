@@ -34,6 +34,7 @@ from ccxt.base.errors import AuthenticationError
 
 # ------------------------------------------------------------------------------
 
+
 class Argv(object):
     id_tests = False
     static_tests = False
@@ -118,6 +119,7 @@ def get_cli_arg_value(arg):
     arg_exists_wo_hyphen = getattr(argv, without_hyphen) if hasattr(argv, without_hyphen) else False
     return arg_exists or arg_exists_with_hyphen or arg_exists_wo_hyphen
 
+
 isWsTests = get_cli_arg_value('--ws')
 
 
@@ -149,6 +151,7 @@ def dump(*args):
 
 def convert_ascii(str):
     return str  # stub
+
 
 def json_parse(elem):
     return json.loads(elem)
@@ -193,9 +196,11 @@ async def call_method(test_files, methodName, exchange, skippedProperties, args)
 async def call_exchange_method_dynamically(exchange, methodName, args):
     return await getattr(exchange, methodName)(*args)
 
+
 async def call_overriden_method(exchange, methodName, args):
     # needed for php
     return await call_exchange_method_dynamically(exchange, methodName, args)
+
 
 def exception_message(exc):
     message = '[' + type(exc).__name__ + '] ' + "".join(format_exception(type(exc), exc, exc.__traceback__, limit=6))
@@ -243,23 +248,27 @@ async def get_test_files(properties, ws=False):
             dir_to_test = DIR_NAME + '/../' + prefix + '/test/Exchange/'
             module_string = 'ccxt.pro.test.Exchange.test_' + name_snake_case
         filePathWithExt = dir_to_test + 'test_' + name_snake_case + '.py'
-        if (io_file_exists (filePathWithExt)):
+        if (io_file_exists(filePathWithExt)):
             imp = importlib.import_module(module_string)
             tests[methodName] = imp  # getattr(imp, finalName)
     return tests
+
 
 async def close(exchange):
     if (not is_synchronous and hasattr(exchange, 'close')):
         await exchange.close()
 
+
 def is_null_value(value):
     return value is None
+
 
 def set_fetch_response(exchange: ccxt.Exchange, data):
     async def fetch(url, method='GET', headers=None, body=None):
         return data
     exchange.fetch = fetch
     return exchange
+
 
 # *********************************
 # ***** AUTO-TRANSPILER-START *****

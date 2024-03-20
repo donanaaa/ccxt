@@ -44,6 +44,7 @@ class Binance(ccxt.binance):
             self.safe_number(ohlcv, 7),  # << here
         ]
 
+
 exchange = Binance()
 markets = exchange.load_markets()
 # exchange.verbose = True  # uncomment for debugging purposes if necessary

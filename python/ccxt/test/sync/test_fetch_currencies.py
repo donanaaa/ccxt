@@ -14,6 +14,7 @@ sys.path.append(root)
 
 from ccxt.test.base import test_currency  # noqa E402
 
+
 def test_fetch_currencies(exchange, skipped_properties):
     method = 'fetchCurrencies'
     # const isNative = exchange.has['fetchCurrencies'] && exchange.has['fetchCurrencies'] !== 'emulated';

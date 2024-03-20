@@ -14,6 +14,7 @@ sys.path.append(root)
 
 from ccxt.test.base import test_order_book  # noqa E402
 
+
 async def test_fetch_order_books(exchange, skipped_properties):
     method = 'fetchOrderBooks'
     symbol = exchange.symbols[0]

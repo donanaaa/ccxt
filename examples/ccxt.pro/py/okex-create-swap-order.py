@@ -10,7 +10,7 @@ exchange = ccxt.pro.okex({
     'apiKey': 'YOUR_API_KEY',
     'secret': 'YOUR_API_SECRET',
     'password': 'YOUR_API_PASSWORD',
-    'options': { 'defaultType': 'swap' },
+    'options': {'defaultType': 'swap'},
 })
 
 

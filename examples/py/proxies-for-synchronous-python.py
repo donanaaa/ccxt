@@ -15,12 +15,10 @@ exchange = ccxt.poloniex({
 exchange.proxies = my_proxies
 
 
-
-
 # ########## CONFIGURING FROM ENV ########## #
 # You can configure proxies by setting the environment variables:
 
-# $ export HTTP_PROXY="http://1.2.3.4:5678" 
+# $ export HTTP_PROXY="http://1.2.3.4:5678"
 # $ export HTTPS_PROXY="http://1.2.3.4:5678"
 
 # And then passing `trust_env` to `True`(by default, it is set to `False`)

@@ -2,7 +2,6 @@
 
 import os
 import sys
-import asciichart
 
 # -----------------------------------------------------------------------------
 
@@ -16,6 +15,7 @@ sys.path.append(this_folder)
 import ccxt  # noqa: E402
 
 # -----------------------------------------------------------------------------
+
 
 class MyBinance(ccxt.binance):
     def parse_ohlcv(self, ohlcv, market=None):

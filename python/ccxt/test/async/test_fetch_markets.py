@@ -14,6 +14,7 @@ sys.path.append(root)
 
 from ccxt.test.base import test_market  # noqa E402
 
+
 async def test_fetch_markets(exchange, skipped_properties):
     method = 'fetchMarkets'
     markets = await exchange.fetch_markets()

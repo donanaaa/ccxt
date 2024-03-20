@@ -15,6 +15,7 @@ sys.path.append(root)
 import asyncio
 from ccxt.test.base import test_ticker  # noqa E402
 
+
 async def test_fetch_tickers(exchange, skipped_properties, symbol):
     without_symbol = test_fetch_tickers_helper(exchange, skipped_properties, None)
     with_symbol = test_fetch_tickers_helper(exchange, skipped_properties, [symbol])
